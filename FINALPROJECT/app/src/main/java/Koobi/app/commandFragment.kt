@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
 class commandFragment : Fragment() {
-    //I'm on the branch Fran
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
