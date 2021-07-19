@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.*
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -46,12 +47,14 @@ class MainActivity : AppCompatActivity() {
     private fun setUpNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-        setupActionBarWithNavController(navController)
-        val naveController = Navigation.findNavController(this, R.id.nav_host_fragment)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.Navigation_menu)
-        bottomNavigationView.setupWithNavController(naveController);
-        bottomNavigationView.setupWithNavController(naveController)
 
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+
+        /*setupActionBarWithNavController(navController)
+        val naveController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        bottomNavigationView.setupWithNavController(naveController);*/
     }
 }
 
