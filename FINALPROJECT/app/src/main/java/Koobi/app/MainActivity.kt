@@ -19,20 +19,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState:  Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setUpCustomNavigation();
+       // setUpCustomNavigation();
+        setUpNavigation();
 
 
     }
 
-    private fun setUpCustomNavigation() {
+   /* private fun setUpCustomNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-
 
         // setup custom navigator
         val navigator = CustomNavigator(this, navHostFragment.childFragmentManager, R.id.nav_host_fragment)
         navController.navigatorProvider.addNavigator(navigator);
-
 
         // set navigation graph
         navController.setGraph(R.navigation.nav_graph)
@@ -42,6 +41,17 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.Navigation_menu)
         bottomNavigationView.setupWithNavController(navController);
+    }*/
+
+    private fun setUpNavigation() {
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        setupActionBarWithNavController(navController)
+        val naveController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.Navigation_menu)
+        bottomNavigationView.setupWithNavController(naveController);
+        bottomNavigationView.setupWithNavController(naveController)
+
     }
 }
 
