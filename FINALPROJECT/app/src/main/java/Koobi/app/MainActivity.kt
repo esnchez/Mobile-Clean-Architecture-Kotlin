@@ -49,8 +49,10 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.Navigation_menu)
 
+        val navigator = CustomNavigator(this, navHostFragment.childFragmentManager, R.id.nav_host_fragment)
+        navController.navigatorProvider.addNavigator(navigator)
+        navController.setGraph(R.navigation.nav_graph)
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-
 
         /*setupActionBarWithNavController(navController)
         val naveController = Navigation.findNavController(this, R.id.nav_host_fragment)
