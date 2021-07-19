@@ -12,6 +12,20 @@
         tools:layout="@layout/test_fragment"
         />
 
-    
+    <fragment
+        android:id="@+id/commandFragment"
+        android:name="Koobi.app.commandFragment"
+        android:label="command_fragment"
+        tools:layout="@layout/command_fragment"
+        />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="Koobi.app.profileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment"
+        />
+
+
 
 </navigation>
