@@ -1,5 +1,7 @@
 package Koobi.app
 
+import Koobi.app.Retrofit.JokeResponse
+import Koobi.app.Retrofit.RetrofitProvider
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,12 @@ class testFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.test_fragment, container, false)
+
+    }
+
+
+    fun fetchJoke() : String {
+        var call = RetrofitProvider
     }
 
 
