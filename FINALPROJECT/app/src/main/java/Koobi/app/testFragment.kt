@@ -10,12 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class testFragment : Fragment() {
-
-    private lateinit var retrofitProvider : RetrofitProvider
-    private lateinit var joke:String
+class testFragment : Fragment()  {
+    private lateinit var retrofit : RetrofitProvider
 
 
     override fun onCreateView(
@@ -24,42 +24,25 @@ class testFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.test_fragment, container, false)
-        setJoke(view)
-        return view
-
-    }
-
-    fun setJoke(view: View){
         val textView = view.findViewById<TextView>(R.id.textChanging)
-        textView.text = fetchJoke()
+        fetchJoke(textView)
+        return view
     }
 
 
-    fun fetchJoke() : String {
-
-        retrofitProvider = RetrofitProvider()
-        var joke = "Hello"
-        val call = retrofitProvider.getRetrofit().create(ApiService::class.java).getRandomJoke()
+    private fun fetchJoke(textView: TextView) {
+        retrofit = RetrofitProvider()
+        val call = retrofit.getRetrofit().create(ApiService::class.java).getRandomJoke()
         call.enqueue(object : Callback<JokeResponse> {
             override fun onFailure(call: Call<JokeResponse>?, t: Throwable?) {
                 Log.v("retrofit", "call failed")
+
             }
 
             override fun onResponse(call: Call<JokeResponse>?, response: Response<JokeResponse>?) {
-                if (response != null) {
-                    if (response.isSuccessful) {
-                        joke = response.body()?.Joke.toString()
-                        Log.v("retrofit", "call success ${response.body()?.Joke}")
-                        Log.v("retrofit", "joke is : $joke")
-
-                        //val textview = view.findViewById<TextView>(R.id.textChanging)
-                        //textview.text = response.body()?.Joke
-                    }
-                }
+                Log.v("retrofit", "call success --> " + (response!!.body()!!.Joke))
+                textView.text = response.body()!!.Joke
             }
         })
-        return joke
     }
-
-
 }
