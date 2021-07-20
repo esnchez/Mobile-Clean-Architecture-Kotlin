@@ -11,8 +11,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
-
 class MainActivity : AppCompatActivity() {
 /*
     var bottomNavigationView: BottomNavigationView? = null
@@ -20,13 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState:  Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       // setUpCustomNavigation();
-        setUpNavigation();
-
-
+        setUpCustomNavigation();
+        //setUpNavigation();
     }
 
-   /* private fun setUpCustomNavigation() {
+   private fun setUpCustomNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
@@ -35,14 +31,12 @@ class MainActivity : AppCompatActivity() {
         navController.navigatorProvider.addNavigator(navigator);
 
         // set navigation graph
-        navController.setGraph(R.navigation.nav_graph)
+        navController.setGraph(R.navigation.nav_graph);
 
-        //setupActionBarWithNavController(navController)
-        //val naveController = Navigation.findNavController(this, R.id.nav_host_fragment)
+       val bottomNavigationView = findViewById<BottomNavigationView>(R.id.Navigation_menu)
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.Navigation_menu)
-        bottomNavigationView.setupWithNavController(navController);
-    }*/
+       NavigationUI.setupWithNavController(bottomNavigationView, navController);
+    }
 
     private fun setUpNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -51,10 +45,6 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
-
-        /*setupActionBarWithNavController(navController)
-        val naveController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        bottomNavigationView.setupWithNavController(naveController);*/
     }
 }
 

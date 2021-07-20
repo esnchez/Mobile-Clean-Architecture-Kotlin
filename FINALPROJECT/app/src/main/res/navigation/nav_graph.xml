@@ -5,21 +5,21 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/home">
 
-    <fragment
+    <custom_fragment
         android:id="@+id/home"
         android:name="Koobi.app.testFragment"
         android:label="test_fragment"
         tools:layout="@layout/test_fragment"
         />
 
-    <fragment
+    <custom_fragment
         android:id="@+id/command"
         android:name="Koobi.app.commandFragment"
         android:label="command_fragment"
         tools:layout="@layout/command_fragment"
         />
 
-    <fragment
+    <custom_fragment
         android:id="@+id/profile"
         android:name="Koobi.app.profileFragment"
         android:label="profile_fragment"
