@@ -2,7 +2,6 @@ package Koobi.app
 
 import Koobi.app.Retrofit.ApiService
 import Koobi.app.Retrofit.JokeResponse
-import Koobi.app.Retrofit.RetrofitProvider
 import android.content.Context
 import android.os.Bundle
 import android.util.Log

@@ -2,8 +2,6 @@ package Koobi.app
 
 import Koobi.app.Retrofit.RetrofitModule
 import Koobi.app.Retrofit.ServiceModule
-import android.app.Application
-import android.app.Service
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
