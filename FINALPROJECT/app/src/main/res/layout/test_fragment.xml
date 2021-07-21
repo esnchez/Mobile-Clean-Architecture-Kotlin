@@ -6,10 +6,11 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/textChanging"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:text="TESTing.."/>
 
 </LinearLayout>

@@ -26,6 +26,4 @@
         tools:layout="@layout/profile_fragment"
         />
 
-
-
 </navigation>
