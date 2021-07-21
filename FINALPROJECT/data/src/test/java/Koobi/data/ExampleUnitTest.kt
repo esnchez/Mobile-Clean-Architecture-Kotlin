@@ -1,4 +1,4 @@
-package Koobi.test
+package Koobi.data
 
 import org.junit.Test
 

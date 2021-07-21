@@ -1,2 +1,5 @@
 rootProject.name = "Koobi"
 include ':app'
+include ':domain'
+include ':presenter'
+include ':data'

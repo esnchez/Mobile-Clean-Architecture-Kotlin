@@ -1,4 +1,4 @@
-package com.example.data
+package Koobi.domain
 
 import org.junit.Test
 

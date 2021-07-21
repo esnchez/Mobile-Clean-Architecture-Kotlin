@@ -1,4 +1,4 @@
-package com.example.domain
+package Koobi.presenter
 
 import org.junit.Test
 
