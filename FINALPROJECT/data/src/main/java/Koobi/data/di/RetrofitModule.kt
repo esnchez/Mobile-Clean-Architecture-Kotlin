@@ -1,11 +1,18 @@
-package Koobi.app.Retrofit
+package Koobi.data.di
+
+
+import dagger.Module
+import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
+@Module
+class RetrofitModule {
 
- class RetrofitProvider {
-
-    public fun getRetrofit(): Retrofit {
+    @Singleton
+    @Provides
+    fun provideRetrofit() : Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://api.chucknorris.io/jokes/")
             .addConverterFactory(GsonConverterFactory.create())

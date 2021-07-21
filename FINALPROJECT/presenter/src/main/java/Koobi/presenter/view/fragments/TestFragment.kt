@@ -1,38 +1,29 @@
-package Koobi.app
+package Koobi.presenter.view.fragments
 
-import android.content.Context
+import Koobi.presenter.R
+import Koobi.presenter.view.base.BaseFragment
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import dagger.android.support.AndroidSupportInjection
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
 import javax.inject.Inject
 
-class testFragment : Fragment()  {
-    //private lateinit var retrofit : RetrofitProvider
 
+class TestFragment : BaseFragment() {
     @Inject
     lateinit var retrofit:Retrofit
+/*
+    lateinit var viewModel : HomeVM
+*/
+    //    EXEMPLE GET ARGUMENTS
+//    private val args: HomeFragmentArgs by navArgs()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.test_fragment, container, false)
+    override fun layoutRes() = R.layout.test_fragment
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val textView = view.findViewById<TextView>(R.id.textChanging)
         fetchJoke(textView)
-        return view
     }
-
-
     private fun fetchJoke(textView: TextView) {
         //retrofit = RetrofitProvider()
         val call = retrofit.create(ApiService::class.java).getRandomJoke()
@@ -49,8 +40,9 @@ class testFragment : Fragment()  {
         })
     }
 
-   /* override fun onAttach(context: Context) {
-        super.onAttach(context)
-        AndroidSupportInjection.inject(this)
-    }*/
+
+
 }
+
+
+

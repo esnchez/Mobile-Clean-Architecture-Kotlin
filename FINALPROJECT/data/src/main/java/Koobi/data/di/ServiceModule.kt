@@ -1,5 +1,6 @@
-package Koobi.app.Retrofit
+package Koobi.data.di
 
+import Koobi.data.api.ApiService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

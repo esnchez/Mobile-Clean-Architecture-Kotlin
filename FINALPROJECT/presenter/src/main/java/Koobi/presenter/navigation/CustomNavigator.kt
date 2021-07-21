@@ -1,4 +1,4 @@
-package Koobi.app.Navigation
+package Koobi.presenter.navigation
 
 import android.content.Context
 import android.os.Bundle
