@@ -2,6 +2,7 @@ package Koobi.presenter.di
 
 import Koobi.presenter.view.HostActivity
 import Koobi.presenter.view.fragments.*
+import Koobi.presenter.view.fragments.test.TestFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

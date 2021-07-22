@@ -7,14 +7,14 @@
 
     <custom_fragment
         android:id="@+id/home"
-        android:name="Koobi.app.testFragment"
+        android:name="Koobi.presenter.view.fragments.test.TestFragment"
         android:label="test_fragment"
         tools:layout="@layout/test_fragment"
         />
 
     <custom_fragment
         android:id="@+id/command"
-        android:name="Koobi.app.commandFragment"
+        android:name="Koobi.presenter.view.fragments.CommandFragment"
         android:label="command_fragment"
         tools:layout="@layout/command_fragment"
         />

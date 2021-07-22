@@ -20,7 +20,9 @@ import javax.inject.Singleton
         RetrofitModule::class,
         ServiceModule::class,
         BuilderModule::class,
-        UseCaseModule::class
+        UseCaseModule::class,
+        ViewModelModule::class,
+        RepositoryModule::class
     ]
 )
 
