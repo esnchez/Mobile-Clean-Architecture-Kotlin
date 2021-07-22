@@ -8,3 +8,8 @@ import javax.inject.Inject
 class JokeUseCase
 @Inject constructor(private val jokeRepository: JokeRepository){
     fun getRandomJoke() : Call<JokeModel> = jokeRepository.fetchRandomJoke()}
+
+
+//JokeUseCase.getRandomJoke().enqueue .... .
+//DESDE EL VIEW MODEL!!!!
+// en el view model se cambia el mutable live data despues del enque.
