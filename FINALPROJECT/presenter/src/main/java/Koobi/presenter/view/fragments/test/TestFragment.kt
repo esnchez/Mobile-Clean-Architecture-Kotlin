@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import javax.inject.Inject
+import androidx.lifecycle.Observer
+
 
 
 class TestFragment : BaseFragment() {
@@ -24,9 +26,10 @@ class TestFragment : BaseFragment() {
     override fun layoutRes() = R.layout.test_fragment
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val textView = view.findViewById<TextView>(R.id.textChanging)
         //fetchJoke(textView)
         testJoke()
+        listenVM(view)
+
     }
     private fun fetchJoke(textView: TextView) {
 
@@ -34,6 +37,15 @@ class TestFragment : BaseFragment() {
 
     private fun testJoke(){
         viewModel.generateJoke()
+    }
+
+    private fun listenVM(view: View) {
+        val textView = view.findViewById<TextView>(R.id.textChanging)
+        viewModel.mJoke.observe(viewLifecycleOwner, Observer { joke ->
+            joke?.let {
+                textView.text = joke.jokeText
+            }
+        })
     }
 
 

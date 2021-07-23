@@ -27,7 +27,9 @@ class TestVM
             }
 
             override fun onResponse(call: Call<JokeModel>?, response: Response<JokeModel>?) {
-                Log.i("Retrofit", "is working!" + response!!.body())
+                if (response != null) {
+                    _mJoke.value = response.body()
+                }
             }
         }
         )
