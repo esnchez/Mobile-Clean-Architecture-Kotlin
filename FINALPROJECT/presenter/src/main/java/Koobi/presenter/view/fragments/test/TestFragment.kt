@@ -7,13 +7,15 @@ import android.view.View
 import android.widget.TextView
 import javax.inject.Inject
 import androidx.lifecycle.Observer
+import kotlinx.android.synthetic.main.test_fragment.*
 
 
 
 class TestFragment : BaseFragment() {
 
     @Inject
-    lateinit var viewModel : TestVM
+    lateinit var viewModel: TestVM
+
 
     /*@Inject
     lateinit var retrofit:Retrofit*/
@@ -26,17 +28,15 @@ class TestFragment : BaseFragment() {
     override fun layoutRes() = R.layout.test_fragment
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //fetchJoke(textView)
         testJoke()
         listenVM(view)
-
     }
-    private fun fetchJoke(textView: TextView) {
 
-    }
 
     private fun testJoke(){
-        viewModel.generateJoke()
+        JokesBtn.setOnClickListener {
+            viewModel.generateJoke()
+        } 
     }
 
     private fun listenVM(view: View) {
