@@ -21,7 +21,7 @@
 
     <custom_fragment
         android:id="@+id/profile"
-        android:name="Koobi.app.profileFragment"
+        android:name="Koobi.presenter.view.fragments.ProfileFragment"
         android:label="profile_fragment"
         tools:layout="@layout/profile_fragment"
         />

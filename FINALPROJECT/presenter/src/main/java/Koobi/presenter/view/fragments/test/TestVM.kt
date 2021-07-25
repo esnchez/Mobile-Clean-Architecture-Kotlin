@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.Single
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.schedulers.Schedulers
 import retrofit2.Call
 import retrofit2.Callback
@@ -38,7 +39,7 @@ class TestVM
         )
     }*/
 
-    fun generateJoke(){
+    /*fun generateJoke(){
         jokeUseCase.getRandomJoke()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({response -> onResponse(response)}, {t -> onFailure(t)})
@@ -50,5 +51,14 @@ class TestVM
 
     private fun onFailure(t : Throwable){
         Log.i("Fran", "NOPP", t)
+    }*/
+
+    fun generateJoke(){
+        jokeUseCase.getRandomJoke()
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeBy (
+                onSuccess = { _mJoke.value = it },
+                onError = { Log.i("fran", it.message!!)}
+            )
     }
 }
