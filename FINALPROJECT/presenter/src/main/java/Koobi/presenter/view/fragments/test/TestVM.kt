@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import io.reactivex.Single
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import retrofit2.Call
@@ -40,5 +41,14 @@ class TestVM
     fun generateJoke(){
         jokeUseCase.getRandomJoke()
             .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({response -> onResponse(response)}, {t -> onFailure(t)})
+    }
+
+    private fun onResponse(response : JokeModel ){
+        Log.i("fran" , "yes" + response.jokeText);
+    }
+
+    private fun onFailure(t : Throwable){
+        Log.i("Fran", "NOPP", t)
     }
 }
