@@ -3,7 +3,6 @@ package Koobi.domain.usecases
 import Koobi.domain.models.JokeModel
 import Koobi.domain.repositories.JokeRepository
 import io.reactivex.rxjava3.core.Single
-import retrofit2.Call
 import javax.inject.Inject
 
 class JokeUseCase

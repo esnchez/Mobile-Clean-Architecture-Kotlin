@@ -6,13 +6,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import io.reactivex.Single
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.kotlin.subscribeBy
-import io.reactivex.rxjava3.schedulers.Schedulers
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import javax.inject.Inject
 
 class TestVM
@@ -23,6 +18,7 @@ class TestVM
     private val _mJoke = MutableLiveData<JokeModel>()
     val mJoke : LiveData<JokeModel> = _mJoke
 
+    //Retrofit call without RX JAVA
     /*fun generateJoke() {
         jokeUseCase.getRandomJoke().enqueue(object : Callback<JokeModel>
         {
@@ -39,6 +35,7 @@ class TestVM
         )
     }*/
 
+    //Accessing response without SUBSCRIBE BY ...
     /*fun generateJoke(){
         jokeUseCase.getRandomJoke()
             .observeOn(AndroidSchedulers.mainThread())
@@ -53,6 +50,7 @@ class TestVM
         Log.i("Fran", "NOPP", t)
     }*/
 
+    //Best function to access the response (it)
     fun generateJoke(){
         jokeUseCase.getRandomJoke()
             .observeOn(AndroidSchedulers.mainThread())
