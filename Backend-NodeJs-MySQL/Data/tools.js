@@ -5,18 +5,22 @@ module.exports = {
             res.status(400).json(err);
             return;
         }
-        
+
         let a = 200;
         if (create) {
             a = 201;
         }
         const answer = {
-            data: null,
             status: a,
             error: null,
         }
+
+        if(result.length == 0){
+            answer.status = 401;
+            answer.error = "Bad login";
+        }
         
-        answer.data = result; //Result of the query
+        //answer.data = result; //Result of the query
         res.status(answer.status).json(answer); //Server response (status and answer) 
     }
 }

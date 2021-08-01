@@ -9,5 +9,9 @@ router.get("/users", (req,res) => {
     model.getUsers(req,res);
 });
 
+router.post("/login", (req,res) => {
+    model.loginUser(req,res)
+})
 
+ 
 module.exports = router

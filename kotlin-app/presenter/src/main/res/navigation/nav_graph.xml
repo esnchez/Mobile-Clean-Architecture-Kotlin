@@ -14,9 +14,9 @@
 
     <custom_fragment
         android:id="@+id/command"
-        android:name="Koobi.presenter.view.fragments.CommandFragment"
-        android:label="command_fragment"
-        tools:layout="@layout/command_fragment"
+        android:name="Koobi.presenter.view.fragments.Login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment"
         />
 
     <custom_fragment

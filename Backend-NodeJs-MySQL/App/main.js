@@ -20,6 +20,7 @@ app.use((err, req, res, next) => {
     next();
 });
 
+//The following line, apparently is working but donot know exactly what is doing. 
 app.use(express.static('public'))
 app.use(require("../Routes/routes"))
 

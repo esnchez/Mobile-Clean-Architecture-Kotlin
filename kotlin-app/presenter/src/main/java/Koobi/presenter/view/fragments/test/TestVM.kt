@@ -36,7 +36,8 @@ class TestVM
     }*/
 
     //Accessing response without SUBSCRIBE BY ...
-    /*fun generateJoke(){
+    /*
+     fun generateJoke(){
         jokeUseCase.getRandomJoke()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({response -> onResponse(response)}, {t -> onFailure(t)})
@@ -51,6 +52,7 @@ class TestVM
     }*/
 
     //Best function to access the response (it)
+
     fun generateJoke(){
         jokeUseCase.getRandomJoke()
             .observeOn(AndroidSchedulers.mainThread())
@@ -59,4 +61,6 @@ class TestVM
                 onError = { Log.i("fran", it.message!!)}
             )
     }
+
+
 }

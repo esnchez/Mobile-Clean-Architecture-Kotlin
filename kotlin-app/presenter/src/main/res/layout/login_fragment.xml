@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <EditText
         android:id="@+id/emailInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:layout_margin="16dp"
+        android:inputType="textEmailAddress"
         android:layout_centerInParent="true"/>
 
     <EditText
@@ -16,12 +19,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/emailInput"
         android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_margin="16dp"
         android:layout_centerInParent="true"/>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LOGIN"
+        android:layout_margin="16dp"
+        android:textColor="@color/white"
+        android:background="@color/purple_500"
         android:layout_below="@+id/passwordInput"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
